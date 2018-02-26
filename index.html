@@ -24,7 +24,7 @@
     function onEachFeature(feature, layer) {
       // does this feature have a property named popupContent?
       if (feature.properties && feature.properties.title) {
-      	var popuphtml = "<strong>" + feature.properties.title + "</strong><ul><li>Notes: " + feature.properties.notes + "</li><li>Property 3: " + feature.properties.property3 + "</li></ul>";
+      	var popuphtml = "<strong>" + feature.properties.title + "</strong><ul><li>Notes: " + feature.properties.notes + "</li></ul>";
         layer.bindPopup(popuphtml);
       }
       layer.setIcon(ballIcon);
@@ -46,7 +46,7 @@
       map = L.map('map', {
         layers: mapLayer,
         center: [ 34.8507212,-82.3985128 ],
-        zoom: 15
+        zoom: 11
       });
 
       L.control.layers({
