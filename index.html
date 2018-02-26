@@ -14,6 +14,15 @@
 	</div>
 	
     <script>
+      // add basketball icon
+      var ballIcon = new L.Icon({
+        iconUrl: './bball.png',
+        iconSize: [20,34],
+        iconAnchor: [10, 34],
+        popupAnchor: [0, -34],
+        shadowSize: [0,0]
+      });
+    
       // using leafletjs.com and its GeoJSON    
     function onEachFeature(feature, layer) {
       // does this feature have a property named popupContent?
@@ -21,6 +30,7 @@
       	var popuphtml = "<strong>" + feature.properties.title + "</strong><ul><li>Notes: " + feature.properties.notes + "</li><li>Property 3: " + feature.properties.property3 + "</li></ul>";
         layer.bindPopup(popuphtml);
       }
+      layer.setIcon(ballIcon);
     }
 
       // Read JSON to variable via http://stackoverflow.com/questions/8191238/how-can-i-set-json-into-a-variable-from-a-local-url
